@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace WebApplication8
+{
+    public class HomeController : Controller
+    {
+        // GET: Home
+        public ActionResult Index()
+        {
+            ViewData["FavHero"] = "Prabhas";
+            ViewBag.FavHeroine = "Rasi";
+            ViewBag.FavFood = "PannerButterMasala";
+            TempData["MyName"] = "Manikanta";
+            return View();
+        }
+    }
+}
+================================================================================
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+Favorite Hero=@ViewData["FavHero"]
+<br />
+<br />
+Favorite Heroine=@ViewBag.FavHeroine
+<br />
+<br />
+Favorite Food=@ViewBag.FavFood
+<br/>
+<br/>
+My Name is=@TempData["MyName"]
